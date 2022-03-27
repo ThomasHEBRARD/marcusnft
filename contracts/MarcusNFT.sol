@@ -12,7 +12,7 @@ contract MarcusNFT is ERC721Enumerable, Ownable {
     string public baseExtension = ".json";
     uint256 public cost = 0.05 ether;
     uint256 public presaleCost = 0.03 ether;
-    uint256 public maxSupply = 100000;
+    uint256 public maxSupply = 1000;
     uint256 public maxMintAmount = 2;
     bool public paused = false;
     mapping(address => bool) public whitelisted;
@@ -24,7 +24,7 @@ contract MarcusNFT is ERC721Enumerable, Ownable {
         string memory _initBaseURI
     ) ERC721(_name, _symbol) {
         setBaseURI(_initBaseURI);
-        mint(msg.sender, 1000);
+        mint(msg.sender, 2);
     }
 
     // internal
