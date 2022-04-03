@@ -24,7 +24,6 @@ contract MarcusNFT is ERC721Enumerable, Ownable {
         string memory _initBaseURI
     ) ERC721(_name, _symbol) {
         setBaseURI(_initBaseURI);
-        mint(msg.sender, 2);
     }
 
     // internal
@@ -39,7 +38,8 @@ contract MarcusNFT is ERC721Enumerable, Ownable {
         require(_mintAmount > 0);
         require(_mintAmount <= maxMintAmount);
         require(supply + _mintAmount <= maxSupply);
-
+        require(block.timestamp >= 1649185965);
+        // require(presaleWallets[msg.sender]= or )
 
         if (msg.sender != owner()) {
             if (whitelisted[msg.sender] != true) {
